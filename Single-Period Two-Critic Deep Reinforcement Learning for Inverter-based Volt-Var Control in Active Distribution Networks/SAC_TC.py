@@ -151,7 +151,8 @@ class Actor(nn.Module):
         # x = F.relu(self.hidden3(x))
 
         # get mean
-        mu = self.mu_layer(x).tanh()
+        mu = self.mu_layer(x)
+        # .tanh()
 
         # get std
         log_std = self.log_std_layer(x).tanh()
